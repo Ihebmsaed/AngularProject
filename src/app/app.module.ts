@@ -8,6 +8,8 @@ import { MainComponent } from './main/main.component';
 import { FooterComponent } from './Composants/footer/footer.component';
 import { ListCategoriesComponent } from './Composants/list-categories/list-categories.component';
 import { HomeComponent } from './Composants/home/home.component';
+import { MydirectiveDirective } from './mydirective.directive';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +18,16 @@ import { HomeComponent } from './Composants/home/home.component';
     MainComponent,
     FooterComponent,
     ListCategoriesComponent,
-    HomeComponent
+    HomeComponent,
+    MydirectiveDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }import { FormsModule } from '@angular/forms';
+
