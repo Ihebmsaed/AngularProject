@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CategProductsComponent } from './Composants/categ-products/categ-products.component';
 import { ListCategoriesComponent } from './Composants/list-categories/list-categories.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { DetailscatComponent } from './Composants/detailscat/detailscat.component';
+import { ProductsCategoryComponent} from './products-category/products-category.component';
 import { HomeComponent } from './Composants/home/home.component';
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
   {path : "home",component:HomeComponent},
   {path : "categProducts",component:CategProductsComponent},
   {path : "categories",component:ListCategoriesComponent},
-  {path : "detailscat/:x",component:DetailscatComponent},
+  {path : "ProductsCategory/:x",component:ProductsCategoryComponent},
   {path : "**",component:NotfoundComponent}
 ];
 

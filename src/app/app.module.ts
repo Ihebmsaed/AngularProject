@@ -11,10 +11,10 @@ import { HomeComponent } from './Composants/home/home.component';
 import { MydirectiveDirective } from './mydirective.directive';
 import { ContainsPipe } from './contains.pipe';
 import { HighlightDirective } from './highlight.directive';
-import { CategProductsComponent } from './Composants/categ-products/categ-products.component';
+//import { CategProductsComponent } from './Composants/categ-products/categ-products.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { DetailscatComponent } from './Composants/detailscat/detailscat.component';
-import { FormsModule } from '@angular/forms';
+import { ProductsCategoryComponent } from './products-category/products-category.component';
+
 
 
 @NgModule({
@@ -28,12 +28,11 @@ import { FormsModule } from '@angular/forms';
     MydirectiveDirective,
     ContainsPipe,
     HighlightDirective,
-    CategProductsComponent,
     NotfoundComponent,
-    DetailscatComponent
-   
-    
+    ProductsCategoryComponent
+
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -42,7 +41,6 @@ import { FormsModule } from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { }import { FormsModule } from '@angular/forms';
+
 {}
-
-
