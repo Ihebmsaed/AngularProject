@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Categorie } from 'src/app/models/categorie';
 
-
 @Component({
-  selector: 'app-list-categories',
-  templateUrl: './list-categories.component.html',
-  styleUrls: ['./list-categories.component.css']
+  selector: 'app-detailscat',
+  templateUrl: './detailscat.component.html',
+  styleUrls: ['./detailscat.component.css']
 })
-export class ListCategoriesComponent
-{
+export class DetailscatComponent {
+
   categories : Categorie[]=[{"id":1,"title":"Grand électroménager",
     "image":"assets/images/categorie_electromenager.jpg", "description":"Grand électroménager",
     "available":true},
@@ -26,13 +26,22 @@ export class ListCategoriesComponent
     {"id":6,"title":"Produits voiture", "image":"assets/images/produits_nettoyages.jpg",
     "description":"Produits voiture","available":false},
     ]
-    
-    titre : string = "";
+    idFromPath!:Number;
+    cat!:Categorie | undefined;
 
-    test(x:string){
-      
-      alert(x)
+
+    constructor (private actR:ActivatedRoute){}
+
+    ngOnInit() {
+
+      this.idFromPath=Number(this.actR.snapshot.params['x']);
+    //alert (this.idFromPath)
+    
+      this.cat=this.categories.find(cat=>cat.id==this.idFromPath
+      );
     }
+  }
+    
+    
     
 
-}

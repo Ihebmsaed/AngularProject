@@ -1,17 +1,22 @@
 <input type="text" name="search" id="search" [(ngModel)]="titre">
 <div class="container">
   <div class="row">
-      <div *ngFor="let cat of categories" class="col-md-4" style="margin-bottom: 20px;">
+    <div class="form-group">
+      <input type="text" class="form-control" id="find" placeholder="Titre catégorie" [(ngModel)]="titre" #title="ngModel">
+    </div>
+    <div class="col-md-4" style="margin-bottom: 20px;" *ngFor="let cat of categories | contains:title.value" appHighlight>
+        
+            
           <img src={{cat.image}} alt={{cat.title}}
               class="img-fluid h-50 w-75"
-              (click)="test(cat.description)">
+              (click)="test(cat.description)"
+              [routerLink]="['/detailscat',cat.id]">
           <h3>{{cat.title|uppercase}}</h3>
-          <button *ngIf="cat.available else alt " class="btn btn-primary">Voir produits</button>
+          <button *ngIf="cat.available else alt "  class="btn btn-primary" routerLink="categProducts">Voir produits</button>
           <ng-template #alt><p  style="color: red;">Catégorie non disponible</p></ng-template>
 
+      </div>
 
-       </div>
-   </div>
+  </div>
 
 </div>
-
